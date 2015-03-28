@@ -44,7 +44,6 @@ func (this *signalHandler) callBack() {
 			f.function.Call(f.params)
 		}
 	}
-	exitChan <- true
 }
 
 func exitSignalDeamon() {
@@ -56,5 +55,7 @@ func exitSignalDeamon() {
 	select {
 	case <-sigChan:
 		handler.callBack()
+		os.Exit(0)
 	}
+
 }
