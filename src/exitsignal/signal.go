@@ -47,7 +47,7 @@ func (this *signalHandler) callBack() {
 	exitChan <- true
 }
 
-func goSignalDeamon() {
+func exitSignalDeamon() {
 	handler := NewSignalHandler()
 	handler.registerCallFunc(clear, "clear work")
 

@@ -7,7 +7,7 @@ import (
 var exitChan = make(chan bool, 1)
 
 func main() {
-	go goSignalDeamon()
+	go exitSignalDeamon()
 
 	select {
 	case <-exitChan:
