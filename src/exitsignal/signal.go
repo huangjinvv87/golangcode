@@ -51,7 +51,7 @@ func exitSignalDeamon() {
 	handler.registerCallFunc(clear, "clear work")
 
 	sigChan := make(chan os.Signal, 1)
-	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGKILL, syscall.SIGTERM)
+	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
 	select {
 	case <-sigChan:
 		handler.callBack()
